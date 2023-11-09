@@ -1,0 +1,15 @@
+.container{
+  width:600px;
+  margin: 0 auto;
+  font-size:18px;
+  font-family: sans-serif;
+}
+p{
+  line-height:1.6;
+}
+
+article + article{
+  border-top:1px solid #c5c5c5;
+  margin-top:50px;
+  padding-top:50px;
+}
