@@ -14,7 +14,7 @@
         @endforeach
       </div>
     @else
-      <p>No posts added for now. Come back later.</p>
+     <b><p class="text-center">No posts added for now. Come back later.</p></b>
     @endif
   </main>
 @endsection

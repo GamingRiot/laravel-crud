@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
@@ -16,17 +17,8 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-  return view('posts', [
-    'posts' => Post::latest()->get()
-  ]);
-});
-
-Route::get('/posts/{post}', function (Post $post) {
-  return view('post', [
-    'postInfo' => $post
-  ]);
-});
+Route::get('/', [PostController::class, 'index']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
 
 Route::get('/categories/{category}', function (Category $category) {
   return view('posts', [
