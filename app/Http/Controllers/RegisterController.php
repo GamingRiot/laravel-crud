@@ -23,6 +23,6 @@ class RegisterController extends Controller
     ]);
 
     User::create($valiidAuthentication);
-    return redirect('/');
+    return redirect('/')->with('success', 'You have been successfuly registered!');
   }
 }
