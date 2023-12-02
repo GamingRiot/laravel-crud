@@ -28,7 +28,13 @@
             </div>
 
             <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">Home Page</a>
+              @auth
+                <span class="text-xs font-bold">Welcome {{ucfirst(auth()->user()->name)}}</span>
+                <a href="/logout" class="ml-7 text-xs font-bold hover:text-blue-500">Log out</a>
+              @else
+                <a href="/register" class="text-xs font-bold uppercase hover:text-blue-500">Register</a>
+                <a href="/login" class="ml-7 mr-5 text-xs font-bold uppercase hover:text-blue-500">Log in</a>
+              @endauth
 
                 <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Subscribe for Updates

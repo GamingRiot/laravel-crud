@@ -22,7 +22,8 @@ class RegisterController extends Controller
       'password' => ['required', 'min:4', 'max:255'],
     ]);
 
-    User::create($valiidAuthentication);
+    $user = User::create($valiidAuthentication);
+    auth()->login($user);
     return redirect('/')->with('success', 'You have been successfuly registered!');
   }
 }
