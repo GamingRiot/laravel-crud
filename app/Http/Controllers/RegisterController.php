@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rule;
 
@@ -11,7 +12,7 @@ class RegisterController extends Controller
 {
   public function show()
   {
-    return view('register.show');
+    return view('users.register');
   }
   public function create()
   {
